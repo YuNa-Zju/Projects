@@ -143,12 +143,111 @@
       \endverb
       \keyw{zheng2022fetishism}
     \endentry
-    \entry{mjw}{online}{}
+    \entry{wiki}{inreference}{}
       \list{language}{1}{%
         {chinese}%
       }
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{abstract}{在马克思主义理论中，商品拜物教（英语：Commodity fetishism）是资本主义市场社会中的社会关系的一种意识形态，其中社会关系体现为一种基于商品或货币的客体关系，主要表现为劳动商品化和异化。“商品拜物教”一词由马克思在《资本论》第一卷（1867年）中首创。 马克思之所以用拜物教一词，可以解释为对工业社会“理性”、“科学”心态的嘲讽。在马克思的时代，这个词主要是用来形容原始宗教。商品拜物教意谓著如此的原始信仰体系其实还留在现代社会的核心。依他的见解，商品拜物教是私有制在资本主义的社会关系中造成的幻影，它在资本主义社会的主流意识形态中占据中心地位。}
+      \field{booktitle}{维基百科，自由的百科全书}
+      \field{day}{26}
+      \field{langid}{pinyin}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{month}{1}
+      \field{note}{Page Version {ID}: 75696530}
+      \field{title}{商品拜物教}
+      \field{urlday}{19}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{userd}{chinese}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://zh.wikipedia.org/w/index.php?title=%E5%95%86%E5%93%81%E6%8B%9C%E7%89%A9%E6%95%99&oldid=75696530
+      \endverb
+      \verb{url}
+      \verb https://zh.wikipedia.org/w/index.php?title=%E5%95%86%E5%93%81%E6%8B%9C%E7%89%A9%E6%95%99&oldid=75696530
+      \endverb
+      \keyw{wiki}
+    \endentry
+    \entry{sxg}{online}{}
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{孙熙国、毛菲：论马克思商品拜物教批判的逻辑理路-马克思主义研究网}
+      \field{urlday}{19}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{usera}{EB}
+      \field{userd}{chinese}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://marxism.cass.cn/zyfzs/202312/t20231213_5710939.shtml
+      \endverb
+      \verb{url}
+      \verb http://marxism.cass.cn/zyfzs/202312/t20231213_5710939.shtml
+      \endverb
+      \keyw{sxg}
+    \endentry
+    \entry{Xu2022}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0556c0037b6d5c8bd3a8f20f328f4809}{%
+           family={徐艳如},
+           familyi={徐\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=0556c0037b6d5c8bd3a8f20f328f4809}{%
+           family={徐艳如},
+           familyi={徐\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{0556c0037b6d5c8bd3a8f20f328f4809}
+      \strng{fullhash}{0556c0037b6d5c8bd3a8f20f328f4809}
+      \strng{bibnamehash}{0556c0037b6d5c8bd3a8f20f328f4809}
+      \strng{authorbibnamehash}{0556c0037b6d5c8bd3a8f20f328f4809}
+      \strng{authornamehash}{0556c0037b6d5c8bd3a8f20f328f4809}
+      \strng{authorfullhash}{0556c0037b6d5c8bd3a8f20f328f4809}
+      \strng{nameabibnamehash}{0556c0037b6d5c8bd3a8f20f328f4809}
+      \strng{nameanamehash}{0556c0037b6d5c8bd3a8f20f328f4809}
+      \strng{nameafullhash}{0556c0037b6d5c8bd3a8f20f328f4809}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{马克思主义研究}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{note}{作者单位：上海交通大学马克思主义学院；邮编：200240；作者出生年份：1990年}
+      \field{number}{6}
+      \field{title}{数字拜物教的秘密及其背后的权力机制}
+      \field{usera}{J}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{pages}{105\bibrangedash 113}
+      \range{pages}{9}
+      \keyw{Xu2022}
+    \endentry
+    \entry{mjw}{online}{}
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{langid}{english}
       \field{languageid}{chinese}
