@@ -1,2 +1,5 @@
 Projects.code-workspace
 *.pptx
+*.zip
+*.synctex.gz
+*.aux
