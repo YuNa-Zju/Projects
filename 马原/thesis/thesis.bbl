@@ -143,6 +143,34 @@
       \endverb
       \keyw{zheng2022fetishism}
     \endentry
+    \entry{mjw}{online}{}
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{穆佳玮 张艳斌：马克思拜物教批判理论视域中精神生活的审视与超越-马克思主义研究网}
+      \field{urlday}{19}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{usera}{EB}
+      \field{userd}{chinese}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb 穆佳玮 张艳斌：马克思拜物教批判理论视域中精神生活的审视与超越-马克思主义研究网:C\:\\Users\\hemingyuna\\Zotero\\storage\\857ZY88X\\t20240816_5772386.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://marxism.cass.cn/mksjbyl/202408/t20240816_5772386.shtml
+      \endverb
+      \verb{url}
+      \verb http://marxism.cass.cn/mksjbyl/202408/t20240816_5772386.shtml
+      \endverb
+      \keyw{mjw}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

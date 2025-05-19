@@ -5,3 +5,6 @@ Projects.code-workspace
 *.aux
 ACEE/checkerboard
 ACEE/checkerboard
+*.bbl
+马原/thesis/thesis.bbl
+马原/thesis/thesis.synctex.gz
