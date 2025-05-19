@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}exbox\PYG{n+nb}{\PYGZcb{}\PYGZob{}}Cool Example\PYG{n+nb}{\PYGZcb{}\PYGZob{}}coolexample\PYG{n+nb}{\PYGZcb{}}
+    This is my example!
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}exbox\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}nameref}\PYG{n+nb}{\PYGZob{}}ex:coolexample\PYG{n+nb}{\PYGZcb{}} (example \PYG{k}{\PYGZbs{}ref}\PYG{n+nb}{\PYGZob{}}ex:coolexample\PYG{n+nb}{\PYGZcb{}}) is pretty cool.
+\end{Verbatim}

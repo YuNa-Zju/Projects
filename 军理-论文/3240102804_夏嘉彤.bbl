@@ -1,0 +1,35 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}
+  \def\eprint#1#2{#2}
+\else
+  \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \let\eprint\href
+\fi
+
+\bibitem[{程刚}(2023)]{__2023}
+{程刚}.
+\newblock “死亡烟花”：铝热剂燃烧弹\allowbreak[J/OL].
+\newblock 军事文摘, 2023\allowbreak (16): 16-19\allowbreak[2024-11-18].
+\newblock \url{https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2023&filename=JSWN202316019}.
+
+\bibitem[bil({[2024]})]{bilibili}
+铝与战争！二战各国对这种“会飞的金属”到底有多重视？ - 哔哩哔哩\allowbreak[EB/OL].
+\newblock \allowbreak[2024-11-18].
+\newblock \url{https://www.bilibili.com/opus/411719009564099272}.
+
+\bibitem[nih({[2024]})]{nihon}
+日本铝工业的昙花一现——世界铝工业百年兴衰史系列(五) - 中国知网\allowbreak[EB/OL].
+\newblock \allowbreak[2024-11-18].
+\newblock \url{https://kns.cnki.net/kcms2/article/abstract?v=WStw-Pbchoywi8Z5BG9xyJB0q9Z370LLdpFcUA5Y4Zs7IdZBk658LZKMGueqNh44syEn6W5ENQhkC7S2dXmV0UGbuWzd0JFj60Xb__p5gM4FnBPm7es6wfnOO_JoT7ilzKSqEk2oiZFKpzMl3KPTpwlHHM4Cfh0IdLpFtLREGZktTAWiqqpBtRRHhnqbayzr&uniplatform=NZKPT&language=CHS}.
+
+\bibitem[gua({[2024]})]{guard}
+防护装甲概述-【维普期刊官网】- 中文期刊服务平台\allowbreak[EB/OL].
+\newblock \allowbreak[2024-11-18].
+\newblock \url{https://lib.cqvip.com/Qikan/Article/Detail?id=663255978}.
+
+\end{thebibliography}

@@ -1,0 +1,85 @@
+\documentclass{amznotes}
+\usepackage{pdfpages}
+\usepackage{ctex}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage[svgnames]{xcolor}
+\usetikzlibrary{mindmap,trees,shadows,positioning, arrows.meta}
+% \usepackage{amssymb}     % 提供 \checkmark
+\usepackage{lipsum}     % filler text
+\newamzbox{rsbox}{结果}{result}{amztecboxcolor}
+\newamzbox{ffbox}{方法}{way}{amzexboxcolor}
+\newamzbox{jqbox}{渠道}{jq}{amznoteboxcolor}
+\begin{document}
+    \setlength{\parindent}{2em}
+    \includepdf[pages={1}]{./source/cover.pdf}
+    \setcounter{tocdepth}{1}
+    \tableofcontents
+    \chapter{前期工作}
+    \section{问卷调查}
+    \input{source/问卷.tex}
+    \section{采访}
+    \input{source/采访.tex}
+    \section{策划}
+    \input{source/策划.tex}
+    \clearpage
+    \chapter{电子手册}
+    \label{books}
+    \input{./source/电子手册.tex}
+    \clearpage
+    \chapter{线下活动}
+    \label{activity}
+    \input{source/线下活动总结.tex}
+    \clearpage
+    \appendix
+    \chapter{附录}
+    \section{问卷原件}
+    \input{./source/问卷原文.tex}
+    \section{采访照片和提纲}
+    \input{./source/采访原文.tex}
+    % \section{推文}
+    % \includepdf[pages={1-2}]{./resource/SQTP大学生信息收集能力培养活动.pdf}
+    \section{感想与分工}
+    \input{./source/感想与分工.tex}
+    \section{时间线}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+        node distance=2cm,
+        activity/.style={draw, rounded corners, align=center, inner sep=0.2cm},
+        time/.style={below=0.3cm of #1, align=center},
+        arrow/.style={-Latex}
+        ]
+      \node (title) [activity] {前期准备工作};
+      \node (t_title) [time=title] {11月月初至月中};
+
+      \node (survey) [activity, right=of title] {问卷设计};
+      \node (t_survey) [time=survey] {11月初及三月初};
+
+      \node (defense) [activity, right=of survey] {答辩};
+      \node (t_defense) [time=defense] {11月中};
+
+      \node (purchase) [activity, right=of defense] {物资采购};
+      \node (t_purchase) [time=purchase] {2月中};
+
+      \node (interview) [activity, below=1.5cm of purchase, xshift=-4cm] {采访及数据分析};
+      \node (t_interview) [time=interview] {3月初};
+
+      \node (share) [activity, right=of interview] {分享会};
+      \node (t_share) [time=share] {4-5月};
+
+      \draw [arrow] (title) -- (survey);
+      \draw [arrow] (survey) -- (defense);
+      \draw [arrow] (defense) -- (purchase);
+      \draw [arrow] (purchase) -- (interview);
+      \draw [arrow] (interview) -- (share);
+
+    \end{tikzpicture}
+    \caption{项目进行时间线}
+    \end{figure}
+    \clearpage
+\end{document}

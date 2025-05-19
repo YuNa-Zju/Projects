@@ -1,0 +1,149 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{jinji}{online}{}
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{第七章 工业革命与十九世纪}
+      \field{urlday}{7}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{usera}{EB}
+      \field{userd}{chinese}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.marxists.org/chinese/dobb/1946/07.htm
+      \endverb
+      \verb{url}
+      \verb https://www.marxists.org/chinese/dobb/1946/07.htm
+      \endverb
+      \keyw{jinji}
+    \endentry
+    \entry{marx}{book}{}
+      \name{author}{1}{}{%
+        {{hash=00e7f3b3efbae620e74a2e38e1cb2a8f}{%
+           family={马克思卡尔},
+           familyi={马\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=00e7f3b3efbae620e74a2e38e1cb2a8f}{%
+           family={马克思},
+           familyi={马\bibinitperiod},
+           given={卡尔},
+           giveni={卡\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \list{location}{1}{%
+        {北京}%
+      }
+      \list{publisher}{1}{%
+        {人民出版社}%
+      }
+      \strng{namehash}{00e7f3b3efbae620e74a2e38e1cb2a8f}
+      \strng{fullhash}{00e7f3b3efbae620e74a2e38e1cb2a8f}
+      \strng{bibnamehash}{00e7f3b3efbae620e74a2e38e1cb2a8f}
+      \strng{authorbibnamehash}{00e7f3b3efbae620e74a2e38e1cb2a8f}
+      \strng{authornamehash}{00e7f3b3efbae620e74a2e38e1cb2a8f}
+      \strng{authorfullhash}{00e7f3b3efbae620e74a2e38e1cb2a8f}
+      \strng{nameabibnamehash}{00e7f3b3efbae620e74a2e38e1cb2a8f}
+      \strng{nameanamehash}{00e7f3b3efbae620e74a2e38e1cb2a8f}
+      \strng{nameafullhash}{00e7f3b3efbae620e74a2e38e1cb2a8f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{chinese}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{subtitle}{第一卷}
+      \field{title}{资本论}
+      \field{usera}{M}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \keyw{marx}
+    \endentry
+    \entry{zheng2022fetishism}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6c34d050a346c0aa459bff3d1e5dd124}{%
+           family={郑宇恒},
+           familyi={郑\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=6c34d050a346c0aa459bff3d1e5dd124}{%
+           family={郑宇恒},
+           familyi={郑\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{6c34d050a346c0aa459bff3d1e5dd124}
+      \strng{fullhash}{6c34d050a346c0aa459bff3d1e5dd124}
+      \strng{bibnamehash}{6c34d050a346c0aa459bff3d1e5dd124}
+      \strng{authorbibnamehash}{6c34d050a346c0aa459bff3d1e5dd124}
+      \strng{authornamehash}{6c34d050a346c0aa459bff3d1e5dd124}
+      \strng{authorfullhash}{6c34d050a346c0aa459bff3d1e5dd124}
+      \strng{nameabibnamehash}{6c34d050a346c0aa459bff3d1e5dd124}
+      \strng{nameanamehash}{6c34d050a346c0aa459bff3d1e5dd124}
+      \strng{nameafullhash}{6c34d050a346c0aa459bff3d1e5dd124}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{27}
+      \field{journaltitle}{哲学进展 [Advances in Philosophy]}
+      \field{langid}{chinese}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{12}
+      \field{number}{6}
+      \field{title}{Fetishism and Materialized Humanity—From the First Volume of Capital}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{chinese}
+      \field{volume}{11}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.12677/ACPP.2022.116363
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.12677/ACPP.2022.116363
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.12677/ACPP.2022.116363
+      \endverb
+      \keyw{zheng2022fetishism}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

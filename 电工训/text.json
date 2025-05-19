@@ -1,0 +1,414 @@
+{
+    "APPHOSTIP": "",
+    "AdjLockParam": true,
+    "BASEMOTION_CFG": [
+        {
+            "Delay": 1000,
+            "Dir": 0,
+            "Speak": ""
+        },
+        {
+            "Delay": 0,
+            "Dir": 4,
+            "Speak": ""
+        },
+        {
+            "Delay": 1000,
+            "Dir": 1,
+            "Speak": ""
+        },
+        {
+            "Delay": 0,
+            "Dir": 4,
+            "Speak": ""
+        },
+        {
+            "Delay": 1000,
+            "Dir": 2,
+            "Speak": ""
+        },
+        {
+            "Delay": 0,
+            "Dir": 4,
+            "Speak": ""
+        },
+        {
+            "Delay": 1000,
+            "Dir": 3,
+            "Speak": ""
+        }
+    ],
+    "BackArm": false,
+    "BallColor": 2,
+    "CATCHBALL_CFG": [
+        {
+            "ANG": 90,
+            "Delay": 200,
+            "ID": -2,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 78,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 89,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 200,
+            "ID": -2,
+            "Speak": ""
+        }
+    ],
+    "Debug": true,
+    "FINDBALL_CFG": [
+        {
+            "SIZE": 0,
+            "SPEAK": "大范围查找",
+            "ballX": -1,
+            "ballY": -1,
+            "servoH": -1,
+            "servoV": -1,
+            "spdTurnFwd": 60
+        },
+        {
+            "SIZE": 0,
+            "SPEAK": "中范围查找",
+            "ballX": -1,
+            "ballY": -1,
+            "servoH": -1,
+            "servoV": -1,
+            "spdTurnFwd": 40
+        },
+        {
+            "SIZE": 0,
+            "SPEAK": "近距离查找",
+            "ballX": -1,
+            "ballY": -1,
+            "servoH": -1,
+            "servoV": -1,
+            "spdTurnFwd": 20
+        },
+        {
+            "SIZE": 15,
+            "SPEAK": "最终定位",
+            "ballX": 246,
+            "ballY": 231,
+            "servoH": 100,
+            "servoV": 71,
+            "spdTurnFwd": 0
+        }
+    ],
+    "GROUPINFO": "周二下午421-02",
+    "INTI_CFG": [
+        156,
+        74,
+        87,
+        120,
+        91,
+        90,
+        90,
+        70
+    ],
+    "NODECAM_CFG": [
+        {
+            "ANG": -1,
+            "Delay": 200,
+            "ID": 8,
+            "Speak": ""
+        },
+        {
+            "ANG": 60,
+            "Delay": 2000,
+            "ID": 8,
+            "Speak": ""
+        },
+        {
+            "ANG": 120,
+            "Delay": 2000,
+            "ID": 8,
+            "Speak": ""
+        },
+        {
+            "ANG": 60,
+            "Delay": 2000,
+            "ID": 8,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 8,
+            "Speak": ""
+        },
+        {
+            "ANG": -1,
+            "Delay": 2000,
+            "ID": 8,
+            "Speak": ""
+        }
+    ],
+    "SHAKECAM_CFG": [
+        {
+            "ANG": -1,
+            "Delay": 200,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": 150,
+            "Delay": 2000,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": 60,
+            "Delay": 2000,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": 150,
+            "Delay": 2000,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": 60,
+            "Delay": 2000,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": -1,
+            "Delay": 2000,
+            "ID": 7,
+            "Speak": ""
+        }
+    ],
+    "SHAKEHAND_CFG": [
+        {
+            "ANG": 90,
+            "Delay": 200,
+            "ID": -2,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 200,
+            "ID": -2,
+            "Speak": ""
+        }
+    ],
+    "VR_CFG": [
+        "ji ben dong zuo",
+        "yao tou huang nao",
+        "dian tou shi yi",
+        "you hao wo zhua",
+        "lan xiang fu ti",
+        "ren wu zhong jie",
+        "dan bu suo ding",
+        "xia yi bu"
+    ],
+    "ZoominFar": true,
+    "blueError": 33,
+    "greenError": 85,
+    "lockSpeed": 197,
+    "maxBallSize": 30,
+    "minBallSize": 2,
+    "minSolid": 60,
+    "minSqure": 50,
+    "redError": 33
+}

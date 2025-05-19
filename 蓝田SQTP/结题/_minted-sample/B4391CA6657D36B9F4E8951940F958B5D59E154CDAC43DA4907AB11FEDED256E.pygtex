@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}newamzbox}\PYG{n+nb}{\PYGZob{}}environment name\PYG{n+nb}{\PYGZcb{}\PYGZob{}}title\PYG{n+nb}{\PYGZcb{}\PYGZob{}}ref label\PYG{n+nb}{\PYGZcb{}\PYGZob{}}color\PYG{n+nb}{\PYGZcb{}}[tcolorbox style]
+\end{Verbatim}

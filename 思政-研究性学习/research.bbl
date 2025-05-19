@@ -1,0 +1,350 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{__2022-3}{online}{}
+      \name{author}{1}{}{%
+        {{hash=5b0c0b9385715d3646f55a0c969a9281}{%
+           family={{陈雪莹}},
+           familyi={陈\bibinitperiod}}}%
+      }
+      \name{editora}{1}{}{%
+        {{hash=11cb087e3aa1d870684727ea381d7cf8}{%
+           family={{荀瑶}},
+           familyi={荀\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=5b0c0b9385715d3646f55a0c969a9281}{%
+           family={{陈雪莹}},
+           familyi={陈\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {黑龙江大学}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{5b0c0b9385715d3646f55a0c969a9281}
+      \strng{fullhash}{5b0c0b9385715d3646f55a0c969a9281}
+      \strng{bibnamehash}{5b0c0b9385715d3646f55a0c969a9281}
+      \strng{authorbibnamehash}{5b0c0b9385715d3646f55a0c969a9281}
+      \strng{authornamehash}{5b0c0b9385715d3646f55a0c969a9281}
+      \strng{authorfullhash}{5b0c0b9385715d3646f55a0c969a9281}
+      \strng{editorabibnamehash}{11cb087e3aa1d870684727ea381d7cf8}
+      \strng{editoranamehash}{11cb087e3aa1d870684727ea381d7cf8}
+      \strng{editorafullhash}{11cb087e3aa1d870684727ea381d7cf8}
+      \strng{nameabibnamehash}{5b0c0b9385715d3646f55a0c969a9281}
+      \strng{nameanamehash}{5b0c0b9385715d3646f55a0c969a9281}
+      \strng{nameafullhash}{5b0c0b9385715d3646f55a0c969a9281}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{在网络信息飞速发展的今天,容貌焦虑似乎已成为大学生们重点关注的议题,近两年学界对于容貌焦虑的研究逐渐增多,目前容貌焦虑的相关研究主要集中在容貌焦虑的原因、表现、影响因素等,文献更多以解决现实为主要目的。然而从容貌焦虑主体“人”的心理学角度观照此话题的研究较少。笔者认为作为容貌焦虑话题主体的“人”更是解决问题的关键,因此本文结合理想美内化和上行社会比较等心理学理论研究抖音的使用加速容貌焦虑的问题,研究对象为18-30岁的大学生,研究方法以问卷调查法和统计分析法为主,分析大学生群体使用抖音短视频平台引发的容貌焦虑加速现象。全文一共分为五个部分。第一章结合时代背景探究容貌焦虑缘何而起,明晰容貌焦虑的缘起与社会转型、社会文化、经济发展等环境因素密不可分。第二章从抖音的发展概况、产品特色、营销手段分析其成为大学生最喜爱短视频的原因。第三章从心理学视角分析大学生使用抖音加速容貌焦虑的原因,发现理想美内化可能在抖音使用强度与容貌焦虑的影响路径中发挥中介作用,上行社会比较发挥调节作用。据此提出研究假设并建立研究模型。第四章验证研究假设是否成立,结果证实理想美内化作为中介因素,上行社会比较作为调节因素的确在不同程度上影响抖音使用强度与容貌焦虑之间的关系。最后,在论文的结尾指出容貌焦虑现象对于大学生的认知与行为的影响,针对研究问题提出了减少大学生容貌焦虑的有效建议,试图对当前抖音使用对大学生群体产生的审美观念扭曲进行纠正,以期大学生能够正确使用社交媒体,辩证看待容貌焦虑问题。}
+      \field{editoratype}{collaborator}
+      \field{langid}{pinyin}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{note}{major: 新闻与传播 download: 4765 album: 社会科学Ⅱ辑;信息科技 {CLC}: G645.5;G206 dbcode: {CMFD} dbname: {CMFD}202202 filename: 1022041541.nh}
+      \field{pagetotal}{66}
+      \field{title}{抖音大学生用户的容貌焦虑研究}
+      \field{type}{硕士学位论文}
+      \field{urlday}{3}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{usera}{D}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.27123/d.cnki.ghlju.2022.000845
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\hemingyuna\\Zotero\\storage\\YVXKCWTK\\陈雪莹 - 2022 - 抖音大学生用户的容貌焦虑研究.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.cnki.net/doi/10.27123/d.cnki.ghlju.2022.000845
+      \endverb
+      \verb{url}
+      \verb https://link.cnki.net/doi/10.27123/d.cnki.ghlju.2022.000845
+      \endverb
+      \keyw{容貌焦虑,抖音,理想美内化,上行社会比较}
+    \endentry
+    \entry{__2023}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4542a3913df6669a79ba202974862173}{%
+           family={{祝旭冉}},
+           familyi={祝\bibinitperiod}}}%
+        {{hash=c968586dc04833854dcf2a06c97ccdee}{%
+           family={{尹升志}},
+           familyi={尹\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=4542a3913df6669a79ba202974862173}{%
+           family={{祝旭冉}},
+           familyi={祝\bibinitperiod}}}%
+        {{hash=c968586dc04833854dcf2a06c97ccdee}{%
+           family={{尹升志}},
+           familyi={尹\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{7adb35b4da966692eec98fa3bf9c0cfc}
+      \strng{fullhash}{2bb05d8c6ce9c9cbd6bf36a354317257}
+      \strng{bibnamehash}{2bb05d8c6ce9c9cbd6bf36a354317257}
+      \strng{authorbibnamehash}{2bb05d8c6ce9c9cbd6bf36a354317257}
+      \strng{authornamehash}{7adb35b4da966692eec98fa3bf9c0cfc}
+      \strng{authorfullhash}{2bb05d8c6ce9c9cbd6bf36a354317257}
+      \strng{nameabibnamehash}{2bb05d8c6ce9c9cbd6bf36a354317257}
+      \strng{nameanamehash}{7adb35b4da966692eec98fa3bf9c0cfc}
+      \strng{nameafullhash}{2bb05d8c6ce9c9cbd6bf36a354317257}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{本文基于健康传播{KAP模型}，通过文献梳理、问卷调查、深度访谈等方法展开研究，以期为大学生容貌焦虑现状提供正确的引导。实证研究显示，大学生容貌焦虑在性别、专业、情感状态等方面存在差异，自我认知情况存在缺陷，身心健康和人际关系受到反向驯化。}
+      \field{issn}{1671-0029}
+      \field{journaltitle}{中国报业}
+      \field{langid}{pinyin}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{note}{download: 1859 album: 经济与管理科学;社会科学Ⅱ辑;信息科技 {CLC}: G206;G645.5 dbcode: {CJFQ} dbname: {CJFDLAST}2023 filename: {ZGBT}202314051}
+      \field{number}{14}
+      \field{title}{健康传播视域下大学生容貌焦虑研究}
+      \field{urlday}{3}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{usera}{J}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{114\bibrangedash 115}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.13854/j.cnki.cni.2023.14.100
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\hemingyuna\\Zotero\\storage\\73HMLGWX\\祝旭冉和尹升志 - 2023 - 健康传播视域下大学生容貌焦虑研究.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.cnki.net/doi/10.13854/j.cnki.cni.2023.14.100
+      \endverb
+      \verb{url}
+      \verb https://link.cnki.net/doi/10.13854/j.cnki.cni.2023.14.100
+      \endverb
+      \keyw{容貌焦虑,健康传播,{CiteSpace},{KAP模型}}
+    \endentry
+    \entry{__2022-2}{article}{}
+      \name{author}{2}{}{%
+        {{hash=81028f09f942643a1b5f587b3042683f}{%
+           family={李升},
+           familyi={李\bibinitperiod}}}%
+        {{hash=453348fa31eb2c59836e53bfcead6b57}{%
+           family={李敏},
+           familyi={李\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=81028f09f942643a1b5f587b3042683f}{%
+           family={李升},
+           familyi={李\bibinitperiod}}}%
+        {{hash=453348fa31eb2c59836e53bfcead6b57}{%
+           family={李敏},
+           familyi={李\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{0f6a3872fb8ca408c81e4d02ef975163}
+      \strng{fullhash}{a41be7883b29ac4af8f92bf8ab30e8c7}
+      \strng{bibnamehash}{a41be7883b29ac4af8f92bf8ab30e8c7}
+      \strng{authorbibnamehash}{a41be7883b29ac4af8f92bf8ab30e8c7}
+      \strng{authornamehash}{0f6a3872fb8ca408c81e4d02ef975163}
+      \strng{authorfullhash}{a41be7883b29ac4af8f92bf8ab30e8c7}
+      \strng{nameabibnamehash}{a41be7883b29ac4af8f92bf8ab30e8c7}
+      \strng{nameanamehash}{0f6a3872fb8ca408c81e4d02ef975163}
+      \strng{nameafullhash}{a41be7883b29ac4af8f92bf8ab30e8c7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{当前社会中出现的“容貌焦虑”成为困扰青年女性群体的重要社会心态问题。基于质性研究方法，从身体社会学的角度出发探究青年女性“容貌焦虑”形成的社会机制。研究发现，青年女性“容貌焦虑”的社会因素关联了构建亲密关系与寻求社会认同的双重维度，为此青年女性既要接受社会性别规训的审美凝视，又需通过身体消费实践以拒绝“容貌焦虑”。信息网络媒介的发展虽使女性有了更为开拓的自身呈现空间，却也强化了社会审美文化和消费社会文化，加之媒介宣传中对身体形象标准的强化与身体消费误导的制造，从而使青年女性陷入“社会审美-容貌焦虑-身体消费”的循环往复的社会场景之中。}
+      \field{issn}{1002-9931}
+      \field{journaltitle}{中国青年研究}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{note}{{<}{>}}
+      \field{number}{4}
+      \field{title}{当代青年女性“容貌焦虑”的社会机制分析}
+      \field{usera}{J}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{pages}{78\bibrangedash 85}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.19633/j.cnki.11-2579/d.2022.0055
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\hemingyuna\\Zotero\\storage\\B7R82648\\当代青年女性“容貌焦虑”的社会机制分析 - 中国知网.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://kns.cnki.net/kcms2/article/abstract?v=KzQCREa95bEljGfUMKPdF3woUut8RPaEfvgQFIwsCBsWTFJ1TePGCLS-aJI3UZUkc5X0Vmho0Rqpkbb_IHdbN0OwdMqIuudZgrK-yvQQjLY1CpMrs4z7YuR42hio2RATWz39xN2xN6HhaTLGyjRMTGUkC6j4zkIlNkJxfqhAiEVQa_M61vR62P4oy-N-bGsk&uniplatform=NZKPT&language=CHS
+      \endverb
+      \verb{url}
+      \verb https://kns.cnki.net/kcms2/article/abstract?v=KzQCREa95bEljGfUMKPdF3woUut8RPaEfvgQFIwsCBsWTFJ1TePGCLS-aJI3UZUkc5X0Vmho0Rqpkbb_IHdbN0OwdMqIuudZgrK-yvQQjLY1CpMrs4z7YuR42hio2RATWz39xN2xN6HhaTLGyjRMTGUkC6j4zkIlNkJxfqhAiEVQa_M61vR62P4oy-N-bGsk&uniplatform=NZKPT&language=CHS
+      \endverb
+      \keyw{容貌焦虑,青年女性,社会审美,身体社会学,身体消费}
+    \endentry
+    \entry{_sisi_2024}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1b9e44c36287dfe287f5b560a16046b2}{%
+           family={马莉娅},
+           familyi={马\bibinitperiod}}}%
+        {{hash=d3a6c1f70475dd2f929053aa0b7be03a}{%
+           family={高玉烛},
+           familyi={高\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=1b9e44c36287dfe287f5b560a16046b2}{%
+           family={马},
+           familyi={马\bibinitperiod},
+           given={莉娅},
+           giveni={莉\bibinitperiod}}}%
+        {{hash=d3a6c1f70475dd2f929053aa0b7be03a}{%
+           family={高},
+           familyi={高\bibinitperiod},
+           given={玉烛},
+           giveni={玉\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{32a71a157a629cf38dd0949d2ffea822}
+      \strng{fullhash}{60c19412606f3e8903cfcc16f4bd7622}
+      \strng{bibnamehash}{60c19412606f3e8903cfcc16f4bd7622}
+      \strng{authorbibnamehash}{60c19412606f3e8903cfcc16f4bd7622}
+      \strng{authornamehash}{32a71a157a629cf38dd0949d2ffea822}
+      \strng{authorfullhash}{60c19412606f3e8903cfcc16f4bd7622}
+      \strng{nameabibnamehash}{60c19412606f3e8903cfcc16f4bd7622}
+      \strng{nameanamehash}{32a71a157a629cf38dd0949d2ffea822}
+      \strng{nameafullhash}{60c19412606f3e8903cfcc16f4bd7622}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{美妆类短视频传播效应下，作为身体认知困扰的“容貌焦虑”逐渐成为当代青年群体普遍的社会心态问题。研究发现，基于视频文本的“容貌焦虑”形成路径和评论区的“容貌焦虑”性别建构，引发了审美标准固化、审美跟风潮流、审美虚假宣传以及审美理想幻象等问题，推动着容貌焦虑的二次传播。本文从身体传播学和文化传播学视角，以抖音短视频平台中典型的美妆类短视频为研究文本，阐释了容貌焦虑网络传播的成因。}
+      \field{issn}{1671-0029}
+      \field{journaltitle}{中国报业}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{note}{{<}{>}}
+      \field{number}{16}
+      \field{title}{美妆视频容貌焦虑形成路径与性别建构——以抖音“Sisi美颜室”为例}
+      \field{usera}{J}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{pages}{126\bibrangedash 127}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.13854/j.cnki.cni.2024.16.055
+      \endverb
+      \verb{file}
+      \verb 美妆视频容貌焦虑形成路径与...抖音“Sisi美颜室”为例_马莉娅:C\:\\Users\\hemingyuna\\Zotero\\storage\\X6EIV45B\\美妆视频容貌焦虑形成路径与...抖音“Sisi美颜室”为例_马莉娅.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://kns.cnki.net/kcms2/article/abstract?v=ad5XPF-Jk6C11V3up_M1ETuKuEQNRYwtU7uEuAO3-JX9Q75qWwVXxADD-nuAnojxtZgoLUTP5ArvfumnH7xwesTAwVay4qFzx9G6kTCZW9otFT-FMJOFMA==&uniplatform=NZKPT&language=gb
+      \endverb
+      \verb{url}
+      \verb https://kns.cnki.net/kcms2/article/abstract?v=ad5XPF-Jk6C11V3up_M1ETuKuEQNRYwtU7uEuAO3-JX9Q75qWwVXxADD-nuAnojxtZgoLUTP5ArvfumnH7xwesTAwVay4qFzx9G6kTCZW9otFT-FMJOFMA==&uniplatform=NZKPT&language=gb
+      \endverb
+      \keyw{短视频,美妆,容貌焦虑,身体}
+    \endentry
+    \entry{__2022-4}{article}{}
+      \name{author}{1}{}{%
+        {{hash=de826ec662a0fe098667632b85652aac}{%
+           family={{杨顺兴}},
+           familyi={杨\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=de826ec662a0fe098667632b85652aac}{%
+           family={{杨顺兴}},
+           familyi={杨\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{de826ec662a0fe098667632b85652aac}
+      \strng{fullhash}{de826ec662a0fe098667632b85652aac}
+      \strng{bibnamehash}{de826ec662a0fe098667632b85652aac}
+      \strng{authorbibnamehash}{de826ec662a0fe098667632b85652aac}
+      \strng{authornamehash}{de826ec662a0fe098667632b85652aac}
+      \strng{authorfullhash}{de826ec662a0fe098667632b85652aac}
+      \strng{nameabibnamehash}{de826ec662a0fe098667632b85652aac}
+      \strng{nameanamehash}{de826ec662a0fe098667632b85652aac}
+      \strng{nameafullhash}{de826ec662a0fe098667632b85652aac}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{<}正{>}从公交站台到社交网站再到各大综艺，医疗美容行业广告“铺天盖地”，成全“爱美之心”的同时也制造了各种“容貌焦虑”。上海市市场监管局近年来开展医疗美容治理，加强广告营销宣传监管，梳理了医疗美容行业中的五种常见违法套路，向社会做出以下警示。}
+      \field{issn}{1674-6953}
+      \field{journaltitle}{产品可靠性报告}
+      \field{langid}{pinyin}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{note}{download: 171 album: 经济与管理科学 {CLC}: F203 dbcode: {CJFQ} dbname: {CJFDLAST}2023 filename: {JDXZ}202212003}
+      \field{number}{12}
+      \field{title}{上海市市场监管局发布医美行业违法套路警示 制造“容貌焦虑”、签约网红发“测评”}
+      \field{urlday}{16}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{usera}{J}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{20\bibrangedash 21}
+      \range{pages}{2}
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\hemingyuna\\Zotero\\storage\\B4A8FR2A\\杨顺兴 - 2022 - 上海市市场监管局发布医美行业违法套路警示 制造“容貌焦虑”、签约网红发“测评”.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2023&filename=JDXZ202212003
+      \endverb
+      \verb{url}
+      \verb https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2023&filename=JDXZ202212003
+      \endverb
+      \keyw{__2022-4}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

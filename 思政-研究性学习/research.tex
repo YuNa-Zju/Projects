@@ -1,0 +1,94 @@
+\documentclass{source/Paper}
+\usepackage{tabularx}
+\usepackage{subcaption}
+\usepackage{float}
+% \usepackage{gbt7714}
+\usepackage{subfigure}
+\usepackage{enumitem}
+\usepackage[backend=biber, doi = false, citestyle=gb7714-2015, bibstyle=gb7714-2015]{biblatex}
+\usepackage{cleveref}
+\lhead{新时期``容貌焦虑''在大学生群体中的表现及影响研究报告——以大一学生为例}
+\addbibresource{ref.bib}
+\articletitle{新时期``容貌焦虑''在大学生群体中的表现及影响研究报告}
+\name{欢乐斗地组}
+\date{\today}
+\stuid{}
+\Abstract{
+本研究对现代社会一个不可忽视的心理健康问题——``容貌焦虑''在当代大学生群体中的存在现状展开研究，
+阐述医美、社交媒体和广告文化与大学生``容貌焦虑''之间的关系以及``容貌焦虑''对大学生心理和社交行为产生的影响，
+并提出了缓解容貌焦虑的可能路径。
+}
+\Keyword{大学生；容貌焦虑；容貌；心理健康}
+\begin{document}
+\thispagestyle{empty}
+
+\vfill
+
+\begin{center}
+    \includegraphics[width=0.5\paperwidth]{./source/logo/zjuchar.pdf}
+\end{center}
+
+\begin{center}
+    \zihao{-1} \heiti \bfseries
+    研~究~性~学~习~研~究~报~告
+\end{center}
+
+\vskip 20pt
+
+\begin{center}
+    \includegraphics[width=0.17\paperwidth]{./source/logo/zju.pdf}
+\end{center}
+
+\vskip 20pt
+\begin{center}
+    \bfseries \zihao{3}
+    \begin{tabularx}{.7\textwidth}{>{\fangsong}l >{\fangsong}X<{\centering}}
+        \fangsong
+        题目      &  \underline{\hfill 新时期``容貌焦虑'' \hfill} \\
+        ~        & \underline{\hfill 在大学生群体中的表现及影响研究报告 \hfill} \\
+        小组名称 & \underline{\hfill 欢乐斗地组 \hfill} \\
+        组长& \underline{\hfill 郭慧婷 \hfill} \\
+        小组成员 & \underline{\hfill 何铭源、蒋子墨、阎乐暄、诸葛一涵 \hfill} \\
+        ~ & \underline{\hfill 江善钊、任弈、赵皓翌、余文乐 \hfill} \\
+
+    \end{tabularx}
+\end{center}
+\vfill
+% \makeheader
+\setcounter{page}{0}
+\newpage
+\tableofcontents
+\newpage
+\makeheader
+
+\noindent\rule{\textwidth}{1pt}
+
+\section{研究背景及现状}
+\input{text/研究背景.tex}
+\section{研究方法}
+\input{text/研究方法.tex}
+\section{统计数据呈现}
+\input{text/统计数据.tex}
+\section{采访内容呈现}
+\input{text/采访内容.tex}
+% \section{医美广告的推动对于容貌焦虑的影响}
+% \#TODO
+% \input{text/医美广告的推动对于容貌焦虑的影响.tex}
+\section{结论}
+\input{text/结论.tex}
+\section{参考文献}
+\printbibliography[heading=bibliography, title=参考文献]
+\newpage
+\appendix
+{\noindent \Large 附录}
+\section{使用AI的感受}
+\input{text/ai.tex}
+\section{分工安排}
+\input{text/分工.tex}
+\newpage
+\section{问卷全文}
+\input{text/问卷.tex}
+\newpage
+\section{采访全文}
+\input{text/采访.tex}
+\end{document}
