@@ -58,8 +58,8 @@
   left=2.5cm,
   right=2.5cm,
   headheight=14.5pt,
-  headsep=2.5cm,
-  footskip=2cm,
+  headsep=0.5cm,
+  footskip=0.5cm,
   % bindingoffset=5mm,
 }
 	%行距
