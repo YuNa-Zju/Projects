@@ -22,8 +22,8 @@
 \RequirePackage{amssymb}
 \setlength{\headheight}{15pt}
 
-\renewcommand {\thetable} {\thesection{}.\arabic{table}}
-\renewcommand {\thefigure} {\thesection{}.\arabic{figure}}
+\renewcommand {\thetable} {\arabic{\thesection}\arabic{table}}
+\renewcommand {\thefigure} {\arabic{figure}}
 
 % 自定义信息参数传递
 	\newcommand\articletitle[1]{\def\@articletitle{#1}}		%标题
@@ -123,7 +123,7 @@
 	\newcommand{\makeheader}{
 		%标题
 		\begin{center}
-			\bfseries\huge{\@articletitle}
+			\bfseries\LARGE{\@articletitle}
 		\end{center}
 		%间距0.4cm
 		\vspace{0.3cm}
@@ -134,11 +134,11 @@
 			% {\large18969145628,hemingyuna@zju.edu.cn}\par
 		\end{center}
 		%摘要
-		% {\noindent\normalsize\textbf{摘要：}}
-		% {\normalsize\kaishu{\@Abstract}} \par
-		% %关键词
-		% {\noindent\normalsize\textbf{关键词：}}
-		% {\normalsize\kaishu{\@Keyword}}
+		{\noindent\normalsize\textbf{摘要：}}
+		{\normalsize\kaishu{\@Abstract}} \par
+		%关键词
+		{\noindent\normalsize\textbf{关键词：}}
+		{\normalsize\kaishu{\@Keyword}}
 		\vspace{0.2cm}
 	}
 
