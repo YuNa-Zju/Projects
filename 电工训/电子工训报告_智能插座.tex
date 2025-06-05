@@ -1,0 +1,47 @@
+\documentclass{zjureport}
+% \special{dvipdfmx:config z 0} % 取消PDF压缩，加快速度，最终版本生成的时候最好把这句话注释掉
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{hypertex=true,colorlinks=true,linkcolor=blue,anchorcolor=blue,citecolor=blue}
+% =============================================
+% Part 0 Edit the info
+% =============================================
+
+\major{信息工程}
+\name{东四421-G2}
+\partner{何铭源、焦正浩}
+\title{本科实验报告}
+\stuid{}
+\college{信息与电子工程学院}
+\date{\today}
+\lab{东四421}
+\course{电子工程训练（甲）}
+\instructor{李培弘}
+\grades{}
+\expname{智能插座实验}
+\exptype{}
+\pagestyle{fancy}
+\rhead{小组：东四421-G2}
+\chead{}
+
+\begin{document}
+% =============================================
+% Part 1 Header
+% =============================================
+\makecover
+
+% \makecontent
+
+\makeheader
+% =============================================
+% Part 2 Main document
+% =============================================
+
+
+\section{新智能插座DIY电装}
+\input{source/电装.tex}
+\section{新智能插座DIY调试}
+\input{source/调试.tex}
+\section{新智能插座DIY系统测试}
+\input{source/测试.tex}
+\end{document}
