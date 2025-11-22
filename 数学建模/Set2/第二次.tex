@@ -1,0 +1,402 @@
+\documentclass{ctexart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{plain}
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{amssymb}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{proposition}{命题}
+\renewcommand{\S}{\mathbf{S}}
+\newcommand{\M}{\mathbf{M}}
+\hypersetup{
+    colorlinks=true,
+}
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{equation}{式}{式}
+\author{何铭源}
+\date{\today}
+\title{数学建模第二次作业}
+\begin{document}
+\maketitle
+\section{江南忆}
+\subsection{第一题}
+可以在排队前先确定一个策略：
+
+即给每个卡牌一个编码：``琮琮''对应0， ``宸宸''对应1, ``莲莲''对应2。
+
+设所有人的背部的编码为$S$。则每个人看到其他人的编码之和为$S'$, 则对于背后不同编码的人，$(S - S' + 3) \mod 3$的结果也不同，而对于相同的编码的人，结果则相同。
+
+最后根据不同的余数站队，就可以保证同编码的人站在一起。
+\subsection{第二题}
+因为题目中要求不能有交流，还必须同时画下自己的卡牌。
+所以我们可以保证能成功地人数最大，为$\lfloor {n \over 3} \rfloor$。
+
+方法如下：
+\begin{enumerate}
+    \item 假设有$n$个人，则将所有人分为$\lfloor {n \over 3} \rfloor$组，每组3人。
+    \item 每组的三位同学分别假设所有卡牌之和对三的余数为0, 1, 2
+    \item 则每组同学根据自己看到的其他同学的卡牌编号之和，以及自己假设的卡牌之和，计算出自己卡牌的编号。
+    \item 这样，每组总有一位同学的卡牌之和与假设的相同。
+\end{enumerate}
+所以，这种方法可以保证$\lfloor{ n \over 3} \rfloor$人猜对。
+\section{猜猜我是谁}
+\subsection{第一题}
+甲可以采用二分的方式查找对应的卡牌，具体步骤如下：
+
+假设牌共有$n$张，因为每个卡牌子集，都存在一个特有特征，则乙可以找到$n \over 2$张卡牌，并询问甲他选择的卡牌是否和这$n \over 2$张卡牌中的相同。
+甲的一次回答可以排除掉一半的卡牌，则重复该动作，直到找到对应的卡牌为止。
+
+一共需要询问的次数$k$
+\[
+k = \lceil \log_2{n} \rceil
+\]
+\subsection{第二题}
+由于不能马上得知答案，乙的询问从自适应方案转化为非自适应方案。此时需要对所有卡牌进行编码。
+
+一种可行的编码方式是使用二进制编码。假设有$n$张卡牌，则需要至少$k$位二进制数满足
+\[2^k \ge n\]
+则每张卡牌可以用一个$k$位的二进制数进行编码。乙可以设计$k$个问题，每个问题对应二进制编码中的一位，询问甲所选卡牌在该位上是0还是1。
+甲根据所选卡牌的编码回答这$k$个问题，乙根据甲的回答可以唯一确定甲所选的卡牌。
+例如，假设有8张卡牌，则可以使用3位二进制数进行编码：
+\begin{itemize}
+    \item 卡牌1: 000
+    \item 卡牌2: 001
+    \item 卡牌3: 010
+    \item 卡牌4: 011
+    \item 卡牌5: 100
+    \item 卡牌6: 101
+    \item 卡牌7: 110
+    \item 卡牌8: 111
+\end{itemize}
+乙可以设计3个问题：
+\begin{itemize}
+    \item 问题1: 牌的特征符合\{2,4,6,8\}号卡的共有特征吗？
+    \item 问题2: 牌的特征符合\{3,4,7,8\}号卡的共有特征吗？
+    \item 问题3: 牌的特征符合\{5,6,7,8\}号卡的共有特征吗？
+\end{itemize}
+则可以根据甲的回答唯一确定所选卡牌。
+一共需要询问的次数$k' = \lceil \log_2{n} \rceil$
+
+但是甲可以选择回答不知道，即二进制的某一位会被擦除，这样就不能唯一确定选中的卡牌。
+
+此时可以设计奇偶校验码的规则，增加1位冗余位，使得所有情况都可以被分辨出来。
+
+为每张牌进行二进制编码，前面位数不够则补零，在最后一位计算前面二进制的1的个数，如果是奇数则补1，如果是偶数则补0。
+
+在设计问题时，乙分别对某一二进制位为1的卡牌集合进行询问。
+甲根据所选卡牌的编码回答这些问题，如果某一位不确定则回答不知道。
+最后乙可以根据甲的回答，以及多设计的那一位奇偶校验位进行判断，确定甲所选的卡牌。
+
+即最后需要询问的次数为
+\[k = \lceil \log_2{n} \rceil + 1\]
+
+例如：有四张卡牌，则可以使用2位二进制数进行信息的编码及一位的奇偶校验位进行冗余编码：
+\begin{enumerate}
+    \item 卡牌1: 00 (奇偶校验位0)
+    \item 卡牌2: 01 (奇偶校验位1)
+    \item 卡牌3: 10 (奇偶校验位1)
+    \item 卡牌4: 11 (奇偶校验位0)
+\end{enumerate}
+乙有 3 个问题要问，分别对应编码的 3 个位：
+\begin{itemize}
+    \item 问题 1（对应第 1 位）：乙找出所有“第 1 位是 1”的卡牌。根据编码表，这个子集是 {卡牌 3, 卡牌 4}。
+    那么一定存在一个特征 $F_1$，只有卡牌 3 和 4 拥有。
+    所以乙的第 1 个问题是：“你的卡牌是否具有特征 $F_1$？”
+    \item 问题 2（对应第 2 位）：乙找出所有“第 2 位是 1”的卡牌。
+    根据编码表，这个子集是 {卡牌 2, 卡牌 4}。一定存在一个特征 $F_2$，只有卡牌 2 和 4 拥有。
+    乙的第 2 个问题是：“你的卡牌是否具有特征 $F_2$？”
+    \item 问题 3（对应第 3 位，即奇偶校验位）：乙找出所有“第 3 位是 1”的卡牌。
+    根据编码表，这个子集是 {卡牌 2, 卡牌 4}。一定存在一个特征 $F_3$，只有卡牌 2 和 4 拥有。
+    乙的第 3 个问题是：“你的卡牌是否具有特征 $F_3$？”
+\end{itemize}
+假设乙得到了(是，不知道，否)的回答，那么翻译为二进制则是``1？0''。根据设计好的奇偶校验位，那么乙可以推断出甲所选中的卡牌为"110",即为卡牌四。
+
+
+\section{倒水}
+\subsection{第一题}
+令 $b = pa + r_1$，其中 $r_1 = b-pa$ 是余数， $0 \le r_1 < a$。
+\begin{itemize}
+    \item 若 $r_1 = 0$，$p=q=b/a$，$b-pa = qa-b = 0 \le a/2$。
+    \item 若 $r_1 > 0$，$q = p+1$。$qa-b = (p+1)a - (pa+r_1) = a - r_1$。
+    令 $r_2 = a-r_1$。我们有 $\min\{r_1, r_2\} = \min\{r_1, a-r_1\} \le a/2$。
+\end{itemize}
+这就证明了$\min{b - pa, qa - b} < \frac{a}{2}$
+
+又已知$c \ge b$，$b \ge pa$。 $p \ge 2^{\lfloor \log_2 p \rfloor} = 2^k$。
+故 $c \ge b \ge pa \ge 2^k a$。
+
+\subsection{证明（$b-pa \le a/2$ 的情况）}
+我们构造一个基于 $p$ 的二进制展开 $p = \sum_{i=0}^k p_i 2^i$ (其中 $p_i \in \{0, 1\}$ 且 $p_k=1$) 的算法。
+设初始状态 $S_0 = (A, B, C) = (a, b, c)$。我们执行 $k+1$ 步（从 $i=0$ 到 $i=k$）。
+在第 $i$ 步（$0 \le i \le k$）：
+\begin{itemize}
+    \item 令 $A_i$ 为当前 A 容器的水量（在第 0 步 $A_0 = a$）。
+    \item 若 $p_i = 1$（$p$ 的第 $i$ 位是 1）：将 $A_i$ 倒入 $B_i$。
+    状态变为 $(2A_i, B_i-A_i, C_i)$。
+    \item 若 $p_i = 0$（$p$ 的第 $i$ 位是 0）：将 $A_i$ 倒入 $C_i$。
+    状态变为 $(2A_i, B_i, C_i-A_i)$。
+    \item 令 $A_{i+1} = 2A_i$。
+\end{itemize}
+\textbf{倾倒合法性：}
+我们需要证明在第 $i$ 步， $A_i \le B_i$ (当 $p_i=1$) 且 $A_i \le C_i$ (当 $p_i=0$)。
+在第 $i$ 步时，$A_i = 2^i a$。
+\begin{itemize}
+    \item \textbf{分析 $B_i$ (当 $p_i = 1$ 时)}：
+    在第 $i$ 步， $A_i = 2^i a$。$B_i$ 的水量为：
+    \begin{align*}
+        B_i &= b - \sum_{j=0}^{i-1} p_j 2^j a \\
+            &\ge pa - \sum_{j=0}^{i-1} p_j 2^j a \quad (\text{因为 } b \ge pa) \\
+            &= \left( \sum_{j=0}^{k} p_j 2^j - \sum_{j=0}^{i-1} p_j 2^j \right) a \\
+            &= \left( \sum_{j=i}^{k} p_j 2^j \right) a
+    \end{align*}
+    若 $p_i = 1$，则 $B_i \ge p_i 2^i a = 1 \cdot 2^i a = A_i$。\\
+    故 $A_i \le B_i$，倾倒 $A_i \to B_i$ 合法。
+
+    \item \textbf{分析 $C_i$ (当 $p_i = 0$ 时)}：
+    在第 $i$ 步，$A_i = 2^i a$。$C_i$ 的水量为：
+    \begin{align*}
+        C_i &= c - \sum_{j=0}^{i-1} (1-p_j) 2^j a \\
+            &\ge c - \sum_{j=0}^{i-1} 1 \cdot 2^j a \quad (\text{因为 } 1-p_j \le 1) \\
+            &= c - (2^i-1)a
+    \end{align*}
+    由上题，我们已知 $c \ge 2^k a$。
+    $$ C_i \ge 2^k a - (2^i-1)a $$
+    若 $p_i = 0$，则必有 $i < k$ (因为 $p_k=1$)。\\
+    我们需要验证 $A_i \le C_i$：
+    \begin{align*}
+        2^i a &\le 2^k a - (2^i-1)a \\
+        2^i a + (2^i-1)a &\le 2^k a \\
+        (2^i + 2^i - 1)a &\le 2^k a \\
+        (2^{i+1}-1)a &\le 2^k a
+    \end{align*}
+    因为 $i \le k-1$，所以 $i+1 \le k$。
+    这 $2^{i+1} \le 2^k$。
+    因此 $2^{i+1}-1 < 2^k$，不等式 $ (2^{i+1}-1)a \le 2^k a $ 恒成立。\\
+    故 $A_i \le C_i$，倾倒 $A_i \to C_i$ 合法。
+\end{itemize}
+\textbf{结果：}
+经过 $k+1$ 步（$i$ 从 0 到 $k$），
+\begin{itemize}
+    \item $A$ 容器变为 $A_{k+1} = 2^{k+1}a$。
+    \item $B$ 容器变为 $b - (\sum_{i=0}^k p_i 2^i)a = b - pa = r$。
+\end{itemize}
+我们在 $k+1$ 步内得到了 $r \le a/2$。
+
+\subsection{证明（$qa-b \le a/2$ 的情况）}
+此情况的算法与第二题对称。 $b = qa - r'$。
+我们构造一个基于 $q$ 的二进制展开 $q = \sum_{i=0}^{k_q} q_i 2^i$ 的算法。
+设 $S_0 = (A, B, C) = (a, b, c)$。
+在第 $i$ 步（$0 \le i \le k_q$）：
+\begin{itemize}
+    \item 令 $A_i$ 为 A 容器的水量 ($A_0 = a$)。
+    \item 若 $q_i = 1$：将 $A_i$ 倒入 $C_i$。（注：与 (2) 不同）
+    \begin{itemize}
+        \item 状态变为 $(2A_i, B_i, C_i-A_i)$。
+    \end{itemize}
+    \item 若 $q_i = 0$：将 $A_i$ 倒入 $B_i$。（注：与 (2) 不同）
+    \begin{itemize}
+        \item 状态变为 $(2A_i, B_i-A_i, C_i)$。
+    \end{itemize}
+    \item 令 $A_{i+1} = 2A_i$。
+\end{itemize}
+
+\subsection*{算法结果}
+经过 $k_q+1$ 步（$i$ 从 0 到 $k_q$），
+\begin{itemize}
+    \item $A$ 容器变为：
+    $$ A_{k_q+1} = 2^{k_q+1}a $$
+
+    \item $C$ 容器变为：
+    $$ C_{k_q+1} = c - \left( \sum_{i=0}^{k_q} q_i 2^i \right) a = c - qa $$
+
+    \item $B$ 容器变为：
+    $$ B_{k_q+1} = b - \left( \sum_{i=0}^{k_q} (1-q_i) 2^i \right) a $$
+\end{itemize}
+
+这两个小题共同证明了：从状态 $(a, b, c)$ 开始，存在一个基本算法，其步数 $N_{\text{round}} \le \max(k+1, k_q+1)$，使得新状态 $(a', b', c')$ 中，存在一个量 $\le a/2$。
+$N_{\text{round}} \le \lfloor \log_2 q \rfloor + 1$。
+
+\subsection{总步数}
+我们将整个过程分为 $j$ 个“基本轮”（流程）。
+
+\subsubsection{估计总轮数 $j$}
+令 $a_0$ 为初始的最小正水量。
+第 1 轮后，得到最小正水量 $a_1 \le a_0/2$。
+第 $i$ 轮后，得到最小正水量 $a_i \le a_0/2^i$。
+算法在 $a_j < 1$ (即 $a_j=0$) 时终止。
+这需要 $a_0/2^j < 1 \implies 2^j > a_0$，故总轮数 $j = \lfloor \log_2 a_0 \rfloor + 1$。
+由于 $a_0$ 是三个量之一， $a_0 \le n/3$。
+$$ j \le \lfloor \log_2(n/3) \rfloor + 1 = \lfloor \log_2 n - \log_2 3 \rfloor + 1 $$
+因为 $\log_2 3 \approx 1.58 > 1$，所以 $\lfloor \log_2 n - 1.58 \rfloor + 1 \le \lfloor \log_2 n - 1 \rfloor + 1 = \lfloor \log_2 n \rfloor$。
+故总轮数 $j \le \log_2 n$。
+
+\subsubsection{估计每轮步数 $N_i$}
+在第 $i$ 轮，设 $a = a_{i-1}$ 为该轮的最小正水量。
+步数 $N_i \le \lfloor \log_2 q \rfloor + 1$，其中 $q = \lceil b/a \rceil$。
+我们需要证明 $N_i \le \log_2 n$。
+
+\begin{itemize}
+    \item \textbf{情况 1： $a = 1$}。
+    此时 $1 \le b \le c$ 且 $1+b+c = n$。
+    $2b \le b+c = n-1 \implies b \le (n-1)/2$。
+    $q = \lceil b / 1 \rceil = b \le (n-1)/2$。
+    \begin{align*}
+        N_i &\le \lfloor \log_2 q \rfloor + 1 \\
+            &\le \lfloor \log_2((n-1)/2) \rfloor + 1 \\
+            &= \lfloor \log_2(n-1) - 1 \rfloor + 1 \\
+            &= \lfloor \log_2(n-1) \rfloor
+    \end{align*}
+    由于 $n-1 < n$， $\log_2(n-1) < \log_2 n$，故 $N_i < \log_2 n$。
+
+    \item \textbf{情况 2： $a \ge 2$}。
+    此时 $q = \lceil b/a \rceil \le b/a + 1$。
+    $a \le b \le c \implies 2b \le b+c = n-a \implies b \le (n-a)/2$。
+    $$ q \le \frac{n-a}{2a} + 1 = \frac{n-a+2a}{2a} = \frac{n+a}{2a} $$
+    $N_i \le \lfloor \log_2 q \rfloor + 1 \le \log_2(q) + 1 \le \log_2\left(\frac{n+a}{2a}\right) + 1$
+    \begin{align*}
+        N_i &\le \log_2(n+a) - \log_2(2a) + 1 \\
+            &= \log_2(n+a) - (\log_2 2 + \log_2 a) + 1 \\
+            &= \log_2(n+a) - \log_2 a
+    \end{align*}
+    我们考虑函数 $f(a) = \log_2(n+a) - \log_2 a$ 在 $a \ge 2$ 时的最大值。
+    $f'(a) = \frac{1}{(n+a)\ln 2} - \frac{1}{a \ln 2} = \frac{a - (n+a)}{a(n+a)\ln 2} = \frac{-n}{a(n+a)\ln 2} < 0$。
+    $f(a)$ 是一个关于 $a$ 的递减函数。
+    因此，最大值在 $a$ 取最小值 $a=2$ 时取得。
+    $$ N_i \le f(2) = \log_2(n+2) - \log_2 2 = \log_2\left(\frac{n+2}{2}\right) $$
+    我们需要证明 $\log_2((n+2)/2) \le \log_2 n$。
+    $$ \frac{n+2}{2} \le n \iff n+2 \le 2n \iff 2 \le n $$
+    在 $a \ge 2$ 的情况下， $n = a+b+c \ge 2+2+2=6$，故 $n \ge 2$ 恒成立。
+    故 $N_i \le \log_2 n$。
+\end{itemize}
+在所有情况下，每轮步数 $N_i \le \log_2 n$。
+
+\subsubsection{估计总步数 $N_{\text{total}}$}
+总步数 $N_{\text{total}} = \sum_{i=1}^{j} N_i$。
+$$ N_{\text{total}} \le \sum_{i=1}^{j} (\log_2 n) = j \cdot (\log_2 n) $$
+代入 $j \le \log_2 n$，
+$$ N_{\text{total}} \le (\log_2 n) \cdot (\log_2 n) = (\log_2 n)^2 $$
+% \subsection{第一题}
+% \subsubsection{第一部分：$\min\{b-pa, qa-b\} \le \frac{a}{2}$}
+
+% \begin{itemize}
+%     \item $p = \lfloor \frac{b}{a} \rfloor$。根据底取整的定义，$p \le \frac{b}{a} < p+1$。
+%     \item $q = \lceil \frac{b}{a} \rceil$。根据顶取整的定义，$q-1 < \frac{b}{a} \le q$。
+
+%     \item \textbf{情况1：$a$ 能整除 $b$。} \\
+%     此时 $\frac{b}{a}$ 是整数，$p = q = \frac{b}{a}$。
+%     $b - pa = b - (\frac{b}{a})a = 0$。
+%     $qa - b = (\frac{b}{a})a - b = 0$。
+%     $\min\{0, 0\} = 0 \le \frac{a}{2}$。 (假设 $a$ 为正整数)
+
+%     \item \textbf{情况2：$a$ 不能整除 $b$。} \\
+%     此时 $\frac{b}{a}$ 不是整数，所以 $p < \frac{b}{a} < q$，且 $q = p+1$。
+%     令 $b = pa + r$，其中 $r = b - pa$ 是 $b$ 除以 $a$ 的“余数”部分。
+%     因为 $p \le \frac{b}{a} < p+1$，所以 $pa \le b < pa+a$，即 $0 \le b-pa < a$。
+%     因为 $a \nmid b$，所以 $0 < r < a$。
+%     我们有 $b-pa = r$。
+%     $qa-b = (p+1)a - (pa+r) = pa+a-pa-r = a-r$。
+%     我们要证明 $\min\{r, a-r\} \le \frac{a}{2}$。
+%     因为 $0 < r < a$，
+%     \begin{itemize}
+%         \item 如果 $0 < r \le \frac{a}{2}$，则 $\min\{r, a-r\} = r \le \frac{a}{2}$。
+%         \item 如果 $\frac{a}{2} < r < a$，则 $a-r < \frac{a}{2}$，则 $\min\{r, a-r\} = a-r < \frac{a}{2}$。
+%     \end{itemize}
+%     两种情况（包括 $r=a/2$）都不等式 $\min\{r, a-r\} \le \frac{a}{2}$ 恒成立。
+% \end{itemize}
+
+% \subsubsection{第二部分：$c \ge 2^k a$}
+
+% \begin{itemize}
+%     \item $k = \lfloor \log_2 p \rfloor$。根据底取整的定义，$k \le \log_2 p < k+1$，这意味着 $2^k \le p < 2^{k+1}$。
+%     \item $p = \lfloor \frac{b}{a} \rfloor$。根据底取整的定义，$p \le \frac{b}{a}$。
+%     \item $a \le b \le c$ 是已知的。
+% \end{itemize}
+% 由 $p \le \frac{b}{a}$ 可得 $b \ge pa$。
+% 由 $2^k \le p$ 可得 $pa \ge 2^k a$。
+% 结合两者：$b \ge pa \ge 2^k a$。
+% 又因为 $c \ge b$，所以 $c \ge b \ge 2^k a$。
+% 即 $c \ge 2^k a$。
+% \subsection{第二，三题}
+
+% 正确的算法结合了容器 $c$。
+% 以 $p=2, k=1$ ($b=2a+r, r \le a/2$) 为例，(1) 保证 $c \ge 2^k a = 2a$。
+% $S_0 = (a, b, c) = (a, 2a+r, c)$ \\
+% $S_1 = (2a, 2a+r, c-a)$ (倾倒 $c \to a$) \\
+% $S_2 = (4a, r, c-a)$ (倾倒 $b \to a_1$) \\
+% $k+1=2$ 次倾倒，得到 $r \le a/2$。此算法有效。
+
+% 以 $p=3, k=1$ ($b=3a+r, r \le a/2$) 为例，(1) 保证 $c \ge 2^k a = 2a$。
+% $S_0 = (a, 3a+r, c)$ \\
+% $S_1 = (2a, 3a+r, c-a)$ (倾倒 $c \to a$) \\
+% $S_2 = (4a, a+r, c-a)$ (倾倒 $b \to a_1$) \\
+% $k+1=2$ 次倾倒。得到 $(4a, a+r, c-a)$。
+% 此时 $p_1 = p-2^k = 3-2=1$。$k_1 = \lfloor \log_2 1 \rfloor = 0$。
+% 我们需要 $k_1+1 = 1$ 次额外倾倒。
+% 新状态的 $a$ (最小值) 是 $a+r$ (假设 $a+r \le c-a$)。
+% $a' = a+r$，$b' = c-a$，$c' = 4a$。
+% $p' = \lfloor b'/a' \rfloor = \lfloor (c-a)/(a+r) \rfloor$。
+% 这表明（2）和（3）的证明是迭代的，而 $k+1$ 步的限制似乎是针对算法的“一次迭代”而不是总步数。
+
+% 然而，如果我们仔细阅读（2）和（3），它说的是“必可\textbf{通过不超过}...次倾倒”。这暗示 $k+1$ 是总步数。
+% 这个问题最可能的解释是存在一个更优的倾倒策略。
+
+% \subsection{第四题}
+
+% 我们将这个过程分为多个“轮”。
+
+% 其中一轮的操作：
+% \begin{enumerate}
+%     \item 设当前状态为 $(x, y, z)$。找到最小的水量 $a = \min\{v \mid v \in \{x,y,z\}, v>0\}$。
+%     \item 将其余两个（包括可能的 0）排序为 $b \le c$。我们得到状态 $(a, b, c)$（忽略0）满足 $a \le b \le c$ （如果 $b=0$，则 $a \le c$）。
+%     \item 根据第一小题，必有 $\min\{b-pa, qa-b\} \le a/2$。
+%     \item 如果 $b-pa \le a/2$，我们应用 (2) 的算法。
+%     \item 如果 $qa-b \le a/2$，我们应用 (3) 的算法。
+%     \item 在任一情况下，我们都在 $N_{\text{round}}$ 步内，得到了一个新状态，该状态包含一个新水量 $a' \le a/2$。
+% \end{enumerate}
+
+% \textbf{总步数分析：}
+% $N_{\text{total}} = \sum_{i=1}^{j} N_i$，其中 $j$ 是总轮数，$N_i$ 是第 $i$ 轮的步数。
+
+% \textbf{1. 估计总轮数 $j$：}
+% 令 $a_0$ 为初始的最小正水量。
+% 第 $i$ 轮后，最小正水量 $a_i \le a_0 / 2^i$。
+% 算法在 $a_j < 1$ (即 $a_j=0$) 时终止。
+% 这需要 $a_0 / 2^j < 1 \implies 2^j > a_0$。
+% 所需的轮数 $j = \lfloor \log_2 a_0 \rfloor + 1$。
+% 由于 $a_0 \le n/3$， $j \le \lfloor \log_2(n/3) \rfloor + 1 = \lfloor \log_2 n - \log_2 3 \rfloor + 1$。
+% 因为 $\log_2 3 \approx 1.58 > 1$， $\lfloor \log_2 n - 1.58 \rfloor + 1 \le \lfloor \log_2 n - 1 \rfloor + 1 = \lfloor \log_2 n \rfloor$。
+% 所以，总轮数 $j \le \lfloor \log_2 n \rfloor \le \log_2 n$。
+
+% \textbf{2. 估计每轮步数 $N_i$：}
+% 在第 $i$ 轮， $N_i \le \lfloor \log_2 q_i \rfloor + 1$，其中 $a_{i-1}$ 是该轮的最小正水量。
+% \begin{itemize}
+%     \item \textbf{情况 1： $a_{i-1} = 1$}。
+%     $b_i \le (n-1)/2$。 $q_i = \lceil b_i / 1 \rceil = b_i \le (n-1)/2$。
+%     $N_i \le \lfloor \log_2((n-1)/2) \rfloor + 1 = \lfloor \log_2(n-1) - 1 \rfloor + 1 = \lfloor \log_2(n-1) \rfloor$。
+%     由于 $n-1 < n$， $\log_2(n-1) < \log_2 n$。
+%     故 $N_i < \log_2 n$。
+
+%     \item \textbf{情况 2： $a_{i-1} \ge 2$}。
+%     $q_i \le \frac{n+a_{i-1}}{2a_{i-1}} = \frac{n}{2a_{i-1}} + \frac{1}{2} \le \frac{n}{4} + \frac{1}{2} = \frac{n+2}{4}$。
+%     $N_i \le \lfloor \log_2((n+2)/4) \rfloor + 1 = \lfloor \log_2(n+2) - 2 \rfloor + 1 = \lfloor \log_2(n+2) \rfloor - 1$。
+%     我们知道 $n+2 \le 2n$ （因为 $n \ge 2$），所以 $\log_2(n+2) \le \log_2(2n) = \log_2 n + 1$。
+%     $N_i \le \lfloor \log_2(n+2) \rfloor - 1 \le \log_2(n+2) - 1 \le (\log_2 n + 1) - 1 = \log_2 n$。
+%     故 $N_i \le \log_2 n$。
+% \end{itemize}
+% 在所有情况下，每轮步数 $N_i \le \log_2 n$。
+
+% \textbf{3. 估计总步数 $N_{\text{total}}$：}
+% 总步数 $N_{\text{total}} = \sum_{i=1}^{j} N_i$。
+% $N_{\text{total}} \le \sum_{i=1}^{j} (\log_2 n) = j \cdot (\log_2 n)$。
+% 代入 $j \le \log_2 n$，
+% $N_{\text{total}} \le (\log_2 n) \cdot (\log_2 n) = (\log_2 n)^2$。
+\end{document}

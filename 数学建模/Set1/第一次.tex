@@ -1,0 +1,213 @@
+\documentclass{ctexart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\pagestyle{plain}
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\usepackage{hyperref}
+\usepackage{cleveref}
+\renewcommand{\S}{\mathbf{S}}
+\newcommand{\M}{\mathbf{M}}
+\hypersetup{
+    colorlinks=true,
+}
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{equation}{式}{式}
+\author{何铭源}
+\date{\today}
+\title{数学建模第一次作业}
+\begin{document}
+\maketitle
+\setlength{\parindent}{0pt}
+\section{排序}
+\subsection{第一小问}
+\subsubsection{关于$\mu$}
+我们需要最小化的目标函数为：
+$$ \min_{\mu} \sum_{i=1}^{k} L_1(\mu, \sigma_i) = \min_{\mu} \sum_{i=1}^{k} \sum_{j=1}^{n} |\mu_j - \sigma_i^j| $$
+通过交换求和次序，问题可以分解为对每个分量 $j$ 的独立优化：
+$$ \sum_{j=1}^{n} \min_{\mu_j} \left( \sum_{i=1}^{k} |\mu_j - \sigma_i^j| \right) $$
+这代表了$\mu_j$到$\sigma_i^j$之间距离的最小值,由几何关系可知是在这$i$个数的中位数取到。
+
+\subsubsection{根据 $\mu$ 给出综合排序 $\sigma'$}
+一种综合排序 $\sigma'$ 可以通过对向量 $\mu$ 的分量进行排序得到。具体方法是：将 $\mu_1, \dots, \mu_n$ 的值从小到大排列，$\mu_j$ 值越小的作品 $j$ 其综合排名越靠前。
+若出现平局，可任意排序。
+
+\subsubsection{$\sigma'$ 是否就是最优排序 $\sigma^*$}
+\textbf{不是。} 通过对中位数向量排序得到的 $\sigma'$ \textbf{不一定}是真正使总距离 $d(\sigma, \Sigma)$ 最小的最优排序 $\sigma^*$。
+\paragraph{原因}
+向量 $\mu$ 是在 $\mathbb{R}^n$中的最优解。而最优排序 $\sigma^*$ 是在所有n元\textbf{排列}构成的全排序的最优解。
+将连续空间上的最优解通过简单排序“映射”到离散空间上，不能保证得到离散空间上的全局最优解。
+\paragraph{反例}
+假设有三组专家，共21人，对3个作品排序：
+\begin{itemize}
+    \item 4位专家的排序为 $(1, 2, 3)$
+    \item 7位专家的排序为 $(1, 3, 2)$
+    \item 10位专家的排序为 $(3, 2, 1)$
+\end{itemize}
+计算可得中位数向量 $\mu = (1, 2, 2)$，由此得到的排序 $\sigma' = (1, 2, 3)$。
+其总距离 $d(\sigma', \Sigma) = 4 \cdot 0 + 7 \cdot 2 + 10 \cdot 4 = 54$。
+然而，存在另一个排序 $\sigma^* = (3, 2, 1)$，其总距离 $d(\sigma^*, \Sigma) = 4 \cdot 4 + 7 \cdot 4 + 10 \cdot 0 = 44$。
+因为 $44 < 54$，所以中位数方法得到的 $\sigma'$ 并非最优排序。
+
+\subsection{第二小问}
+我们需要证明：$ \sum_{i=1}^{k} |\beta_j - \sigma_i^j| \le 2 \sum_{i=1}^{k} |\mu_j - \sigma_i^j| $。
+
+
+根据三角不等式，对于任意 $i$ 我们有：
+$$ |\beta_j - \sigma_i^j| \le |\beta_j - \mu_j| + |\mu_j - \sigma_i^j| $$
+对所有 $i$ 从 1到 $k$ 求和：
+\begin{equation*} \label{eq:1} \tag{*}
+\sum_{i=1}^{k} |\beta_j - \sigma_i^j| \le k|\beta_j - \mu_j| + \sum_{i=1}^{k} |\mu_j - \sigma_i^j|
+\end{equation*}
+接下来，我们证明 $k|\beta_j - \mu_j| \le \sum_{i=1}^{k} |\mu_j - \sigma_i^j|$。
+\begin{align*}
+k|\beta_j - \mu_j| &= \left| k \cdot \left(\frac{1}{k}\sum_{i=1}^{k}\sigma_i^j\right) - k\mu_j \right| \\
+&= \left| \sum_{i=1}^{k} \sigma_i^j - k\mu_j \right| \\
+&= \left| \sum_{i=1}^{k} (\sigma_i^j - \mu_j) \right| \\
+&\le \sum_{i=1}^{k} |\sigma_i^j - \mu_j|
+\end{align*}
+将此结论代入\cref{eq:1} 中，我们得到：
+\begin{align*}
+\sum_{i=1}^{k} |\beta_j - \sigma_i^j| &\le \left(\sum_{i=1}^{k} |\mu_j - \sigma_i^j|\right) + \left(\sum_{i=1}^{k} |\mu_j - \sigma_i^j|\right) \\
+&= 2 \sum_{i=1}^{k} |\mu_j - \sigma_i^j|
+\end{align*}
+证明完毕。
+
+
+\subsection{第三小问}
+我们分别证明两个不等式。为方便，记 $D(\sigma) = d(\sigma, \Sigma)$。
+
+\subsubsection{证明 $d(\sigma', \Sigma) \le 3d(\sigma^*, \Sigma)$}
+
+首先，通过中位数向量 $\mu$ 作为桥梁，使用三角不等式：
+\begin{align*}
+D(\sigma') = \sum_{i=1}^{k} L_1(\sigma', \sigma_i) &\le \sum_{i=1}^{k} (L_1(\sigma', \mu) + L_1(\mu, \sigma_i)) \\
+&= k \cdot L_1(\sigma', \mu) + D(\mu) \label{eq:2} \tag{**}
+\end{align*}
+我们为右侧两项寻找上界。
+\begin{enumerate}
+    \item \textbf{关于 $D(\mu)$}: 因为$\mu$是在$\mathbb{R}^n$上的最优解，其总距离必然小于等于任何排列的总距离。因此，$D(\mu) \le D(\sigma^*)$。
+    \item \textbf{关于 $k \cdot L_1(\sigma', \mu)$}: 因为 $\sigma'$ 是通过排序 $\mu$ 得到的，所以 $\sigma'$ 是所有排列中最接近 $\mu$ 的排列之一。因此 $L_1(\sigma', \mu) \le L_1(\sigma^*, \mu)$。
+    利用反向三角不等式，我们有 $D(\sigma^*) = \sum_i L_1(\sigma^*, \sigma_i) \ge |k \cdot L_1(\sigma^*, \mu) - D(\mu)|$。
+    这意味着 $k \cdot L_1(\sigma^*, \mu) - D(\mu) \le D(\sigma^*)$，即 $k \cdot L_1(\sigma^*, \mu) \le D(\sigma^*) + D(\mu)$。
+    结合 $D(\mu) \le D(\sigma^*)$，可得 $k \cdot L_1(\sigma^*, \mu) \le 2D(\sigma^*)$。
+    因此，$k \cdot L_1(\sigma', \mu) \le k \cdot L_1(\sigma^*, \mu) \le 2D(\sigma^*)$。
+\end{enumerate}
+将这两项的上界代入\cref{eq:2} 中：
+$$ D(\sigma') \le k \cdot L_1(\sigma', \mu) + D(\mu) \le 2D(\sigma^*) + D(\sigma^*) = 3D(\sigma^*) $$
+证明完毕。
+
+
+\subsubsection{证明 $d(\sigma'', \Sigma) \le 5d(\sigma^*, \Sigma)$}
+
+推导过程与上一个证明类似，但同时使用 $\mu$ 和 $\beta$ 作为中间量。
+\begin{align*}
+D(\sigma'') &= \sum_i L_1(\sigma'', \sigma_i) \\
+&\le \sum_i (L_1(\sigma'', \beta) + L_1(\beta, \sigma_i))\\
+&= k \cdot L_1(\sigma'', \beta) + D(\beta) \\
+&\le k \cdot L_1(\sigma^*, \beta) + D(\beta) \quad (\text{因 } \sigma'' \text{ 是最接近 } \beta \text{ 的排列}) \\
+&\le k \cdot (L_1(\sigma^*, \mu) + L_1(\mu, \beta)) + D(\beta) \quad (\text{三角不等式}) \\
+&= k \cdot L_1(\sigma^*, \mu) + k \cdot L_1(\mu, \beta) + D(\beta)
+\end{align*}
+现在我们为这三项寻找上界：
+\begin{enumerate}
+    \item $k \cdot L_1(\sigma^*, \mu) \le 2D(\sigma^*)$ (已在上个证明中得出)。
+    \item $k \cdot L_1(\mu, \beta) \le D(\mu) \le D(\sigma^*)$ (在第二问的证明过程中得出)。
+    \item $D(\beta) \le 2D(\mu) \le 2D(\sigma^*)$ (由第二问结论及 $\mu$ 的最优性得出)。
+\end{enumerate}
+将这三个上界代入，得到：
+$$ D(\sigma'') \le 2D(\sigma^*) + D(\sigma^*) + 2D(\sigma^*) = 5D(\sigma^*) $$
+证明完毕。
+\section{球队比赛}
+计算各场比赛的分差 $q_{ij}$:
+
+A-B (5-10): $q_{AB} = 5 - 10 = -5$，$q_{BA} = 10 - 5 = 5$
+
+A-D (57-45): $q_{AD} = 57 - 45 = 12$，$q_{DA} = 45 - 57 = -12$
+
+B-C (10-7): $q_{BC} = 10 - 7 = 3$，$q_{CB} = 7 - 10 = -3$
+
+C-D (3-10): $q_{CD} = 3 - 10 = -7$，$q_{DC} = 10 - 3 = 7$
+
+根据题意约定 $i \in T_i$，因此每个队的比赛集合 $T_i$ 包括其自身和所有对手。
+
+$T_A = \{A, B, D\}$，$T_B = \{A, B, C\}$，$T_C = \{B, C, D\}$，$T_D = \{A, C, D\}$
+\subsection{第一小题}
+由题意，分差之和 $s_i = \sum_{j \in T_i}q_{ij}$。又知 $q_{ii}=0$，计算如下：
+\begin{align*}
+    s_A &= q_{AA} + q_{AB} + q_{AD}\\
+    s_B &= q_{BA} + q_{BB} + q_{BC}\\
+    s_C &= q_{CB} + q_{CC} + q_{CD}\\
+    s_D &= q_{DA} + q_{DC} + q_{DD}\\
+    \S &= \begin{pmatrix}
+        7&8&-10&-5
+    \end{pmatrix}^T
+\end{align*}
+\subsection{第二小题}
+二级分差 $s_i^{(2)}$ 的定义为队 $i$ 在所有可能的 $l^2$ 场二级比赛中的分差之和。
+\[
+s_i^{(2)} = \sum_{j \in T_i} \sum_{k \in T_j} (q_{ij} + q_{jk})
+\]
+我们可以将这个公式展开：
+\[
+s_i^{(2)} = \sum_{j \in T_i} \left( \sum_{k \in T_j} q_{ij} + \sum_{k \in T_j} q_{jk} \right)
+\]
+由于 $|T_j| = l$，且 $s_j = \sum_{k \in T_j} q_{jk}$，上式可以简化为：
+\begin{align*}
+s_i^{(2)} &= \sum_{j \in T_i} (l \cdot q_{ij} + s_j) \\
+          &= l \sum_{j \in T_i} q_{ij} + \sum_{j \in T_i} s_j \\
+          &= l \cdot s_i + \sum_{j \in T_i} s_j
+\end{align*}
+现在，我们利用这个简化公式和第一问的结果来计算 $\S^{(2)}$，其中 $l=3$。
+因此，二级分差向量 $\S^{(2)}$ 为：
+\[
+\S^{(2)} = \begin{pmatrix} 31 & 29 & -37 & -23 \end{pmatrix}^T
+\]
+\subsection{第三小题}
+首先，根据 $T_i$ 写出矩阵 $\M$：
+\begin{align*}
+    \M &= \begin{pmatrix}
+        1 & 1 & 0 & 1\\
+        1 & 1 & 1 & 0\\
+        0 & 1 & 1 & 1\\
+        1 & 0 & 1 & 1
+    \end{pmatrix}\\
+    s_i^{(2)} &= l \cdot s_i + \sum_{j \in T_i} s_j\\
+\end{align*}
+由$\M$的性质
+\[
+    \sum_{j \in T_i} s_j = \sum_{j = 1}^{n} m_{ij}s_j
+\]
+所以
+\[
+\S^{(2)} = l \cdot \S + \M \S = (l\mathbf{E} + \M)\S
+\]
+设$\mathbf{C} = \M^2$, 则$c_{ij} = \sum_{k=1}^{n} m_{ik} \cdot m_{kj}$,只有当$m_{ik}$与$m_{kj}$都为1时才为1,因此总和恰巧表示从队$i$到队$j$的二级比赛场数。
+\subsection{第四小题}
+$r$ 级分差之和 $s_i^{(r)}$ 的定义展开后包含 $r$ 个求和项：
+\begin{equation}
+    s_i^{(r)} = \sum_{j_1 \in T_i} \sum_{j_2 \in T_{j_1}}\cdots\sum_{j_r \in T_{j_{r - 1}}}(q_{ij_1} + q_{j_1j_2} + \cdots + q_{j_{r - 1}j_r})
+    \label{eq:3}
+\end{equation}
+其中如果只看第$k$项, 那么
+\[
+\sum_{j_1 \in T_i} \sum_{j_2 \in T_{j_1}}\cdots\sum_{j_r \in T_{j_{r - 1}}}q_{j_{k - 1}j_k}\text{重复加了}l^{l - r}\text{次}
+\]
+即
+\[
+\sum_{j_1 \in T_i} \sum_{j_2 \in T_{j_1}}\cdots\sum_{j_r \in T_{j_{r - 1}}}(q_{j_{k - 1}j_k}) = l^{l - r} \sum_{j_1 \in T_i} \sum_{j_2 \in T_{j_1}}\cdots\sum_{j_k \in T_{j_{k - 1}}}(q_{j_{k - 1}j_k})
+\]
+而根据矩阵乘法的递推关系，我们知道：
+\[
+\sum_{j_1 \in T_i} \cdots \sum_{j_k \in T_{j_{k-1}}} q_{j_{k-1}j_k} = \sum_{j_1 \in T_i} \cdots \sum_{j_{k-1} \in T_{j_{k-2}}} s_{j_{k-1}} = (M^{k-1}S)_i
+\]
+所以，原展开式中第 $k$ 项的向量形式为 $l^{r-k}M^{k-1}S$。
+故\cref{eq:3}中$r$项相加后得到
+\[
+\S^{(r)} = (\sum_{k = 1}^{r}l^{r - k}\M^{k - 1})\S
+\]
+\end{document}

@@ -1,0 +1,132 @@
+\documentclass{ctexart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{plain}
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{amssymb}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{proposition}{命题}
+\renewcommand{\S}{\mathbf{S}}
+\newcommand{\M}{\mathbf{M}}
+\hypersetup{
+    colorlinks=true,
+}
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{equation}{式}{式}
+\author{何铭源}
+\date{\today}
+\title{数学建模第三次作业}
+\begin{document}
+\maketitle
+\section{传染病}
+\subsection{$E(X_n)$ 与 $E(Y_n)$的关系}
+有$n$个人,每个人得病的概率为$p$, 那么$n$个人都不得病的概率$p_0 = (1 - p)^n$,$n$个人至少有一人得病的概率为$p_1 = 1 - p_0 = 1 - (1 - p)^n$
+
+对于$Y$来说,已经知道有感染者了,而对于$X$来说,还不知道,所以需要进行第一次初检
+\begin{equation}
+    \begin{cases}
+        0 & \text{为阴性}\\
+        (1 - (1 - p)^n)Y_n & \text{为阳性}
+    \end{cases}
+\end{equation}
+则最后$E(X_n)$就是第一次检测,与后续需要检测次数之和
+\begin{equation}
+    E(X_n)= 1 + (1 - (1 - p) ^ n) E(Y_n)\label{tui}
+\end{equation}
+\subsection{$E(Y_n)$的递推}
+将$n$个人分成A,B两组,每组分别为$\lfloor {n \over 2} \rfloor$, $\lceil {n \over 2}\rceil$ 个人,第一组有阳性的概率为
+\begin{align}
+    P(\text{A组有阳性} | \text{整个组有阳性}) &= \frac{1 - (1 - p) ^ {\lfloor\frac{n}{2}\rfloor}}{1 - (1 - p)^n}\\
+    P(\text{A组为阴性} | \text{整个组有阳性}) &= \frac{(1 - p) ^ {\lfloor\frac{n}{2}\rfloor}(1 - (1 - p) ^ {\lceil\frac{n}{2}\rceil})}{1 - (1 - p)^n}
+\end{align}
+A有阳性,那么之后需要继续测试A,B
+\[
+Y_n = (\frac{1 - (1 - p) ^ {\lfloor\frac{n}{2}\rfloor}}{1 - (1 - p)^n})(Y_{\lfloor {n \over 2} \rfloor} + X_{\lceil {n \over 2} \rceil})
+\]
+如果A是阴性,那么只需要测试B
+\[
+Y_n = (\frac{(1 - p) ^ {\lfloor\frac{n}{2}\rfloor}(1 - (1 - p) ^ {\lceil\frac{n}{2}\rceil})}{1 - (1 - p)^n})Y_{\lceil {n \over 2} \rceil}
+\]
+
+两种情况加和,且由\cref{tui}, 那么
+\begin{align*}
+    Y_n = &(\frac{1 - (1 - p) ^ {\lfloor\frac{n}{2}\rfloor}}{1 - (1 - p)^n})(Y_{\lfloor {n \over 2} \rfloor} + X_{\lceil {n \over 2} \rceil})\\
+            &+ (\frac{(1 - p) ^ {\lfloor\frac{n}{2}\rfloor}(1 - (1 - p) ^ {\lceil\frac{n}{2}\rceil})}{1 - (1 - p)^n})Y_{\lceil {n \over 2} \rceil}\\
+         &= (\frac{1 - (1 - p) ^ {\lfloor\frac{n}{2}\rfloor}}{1 - (1 - p)^n})(Y_{\lfloor {n \over 2} \rfloor} + (1 + (1 - p)^{\lceil {n \over 2} \rceil}Y_{\lceil n \over 2 \rceil}))\\
+         &+ (\frac{(1 - p) ^ {\lfloor\frac{n}{2}\rfloor}(1 - (1 - p) ^ {\lceil\frac{n}{2}\rceil})}{1 - (1 - p)^n})Y_{\lceil{ n \over 2 }\rceil}\\
+\end{align*}
+
+取期望
+\begin{equation}
+    E(Y_n) = 1 + \frac{1 - (1 - p)^{\lfloor \frac{n}{2} \rfloor}}{1 - (1 - p)^n} + \frac{1 - (1 - p)^{\lfloor \frac{n}{2} \rfloor}}{1 - (1 - p)^n} E(Y_{\lfloor \frac{n}{2} \rfloor}) + \frac{1 - (1 - p)^{\lceil \frac{n}{2} \rceil}}{1 - (1 - p)^n} E(Y_{\lceil \frac{n}{2} \rceil})
+\end{equation}
+其中$E(Y_1)= 0$
+\section{橄榄球比赛}
+\subsection{第一题}
+由全概率公式,甲的获胜情况可能是第一次就得分,或者第一次不得分,B也不得分,然后再次得分,以此类推
+即
+\begin{equation}
+    P_\text{A胜} = 1 - \gamma + \gamma^2 \cdot (1 - \gamma) + \cdots + \gamma^{2n}(1 - \gamma)
+    = \frac{1 - \gamma}{1 + \gamma^2}\\
+    = \frac{1}{1 + \gamma}
+\end{equation}
+\subsection{第二题}
+由全概率公式,第一轮A只可能有三种情况$
+\begin{cases}
+  \text{达阵} & \alpha \\
+  \text{射门} & \beta \\
+  \text{不得分} & \gamma
+\end{cases}$
+达阵则直接得分,射门,则获胜概率为$a$, 不得分,则获胜概率为$b$
+\begin{equation}
+    P'_\text{A胜} = \alpha + \beta \cdot a + \gamma \cdot b
+    \label{winpos}
+\end{equation}
+\subsection{第三题}
+A射门之后,同样B有三种情况,$
+\begin{cases}
+  \text{达阵} & \text{A胜的概率}\,0 \\
+  \text{射门} & \text{A胜的概率}\,\frac{1}{1 + \gamma} \\
+  \text{不得分} & \text{A胜的概率}\,1
+\end{cases}$
+\begin{equation}
+    a = \frac{\beta}{1 + \gamma} + \gamma
+\end{equation}
+A不得分时,B开始突然死亡,B胜的概率为$\frac{1}{1 + \gamma}$,那么A胜的概率
+\begin{equation}
+    b = 1 - \frac{1}{1 + \gamma} = \frac{\gamma}{1 + \gamma}
+\end{equation}
+带入\cref{winpos}得到
+\begin{equation}
+    P' = \beta\gamma - \beta + \frac{1 + \beta^2}{1 + \gamma}
+\end{equation}
+因为两队实力相当,所以从公平性角度考虑,概率接近$1 \over 2$的规则更好.
+
+按照题目给的条件,$\gamma <  1$,那么$P >  \frac{1}{2}$
+
+现在判断$P'$和$1 \over 2$的关系.
+
+构造函数\begin{equation}
+    f(\beta) = P' - \frac{1}{2} = \frac{\beta ^ 2 + (\gamma ^ 2 - 1)\beta - \frac{\gamma - 1}{2}}{1 + \gamma}
+\end{equation}
+其中将$\beta$看作变量,$\gamma$看作参数,那么分式的分子就是一个关于$\beta$的一个二次函数,因而计算其判别式
+\begin{equation}
+    \Delta=(\gamma^2-1)^2+2(\gamma-1)=(\gamma-1)(\gamma^3+\gamma^2-\gamma+7)<0
+\end{equation}
+也就是说,$P' > \frac{1}{2}$恒成立.
+
+这两个概率都比$1\over2$大,那么做差来比较谁更接近$1\over2$.
+\begin{equation}
+    P - P' = \beta \frac{1 - \gamma^2  - \beta}{1 + \gamma} > \beta \frac{1 - \beta - \alpha}{1 + \gamma}= \frac{\alpha \beta}{1 + \gamma} > 0
+\end{equation}
+所以新改的规则概率更接近$1 \over 2$,新改的规则更好.
+\end{document}

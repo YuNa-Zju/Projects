@@ -1,0 +1,161 @@
+\documentclass{ctexart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{plain}
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{proposition}{命题}
+\hypersetup{
+    colorlinks=true,
+}
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{equation}{式}{式}
+\author{何铭源}
+\date{\today}
+\title{数学建模第四次作业}
+\begin{document}
+\maketitle
+\section{学生录取}
+\subsection{求概率$f_k$, $g_k$}
+\subsubsection{$f_k$}
+$f_k$表示前$k$名中第一名的学生在总$n$学生中排第一的概率,也就是说总排名第一,第二的同学都在前$k$名中.
+
+因此,前$k$名中有总排名第二的同学的概率为$\frac{k}{n}$,总排名第一的同学在后$n-k$名中的概率为$\frac{k - 1}{n - 1}$.
+
+因此有:
+\begin{equation}
+    g_k=\frac{k}{n}\cdot \frac{k - 1}{n - 1}
+\end{equation}
+
+\subsubsection{$g_k$}
+$g_k$表示前$k$名中第一名的学生在总$n$学生中排第二的概率,也就是说总排名第二的同学在前$k$名中,总排名第一的同学在$n-k$名中.
+
+因此,前$k$名中有总排名第二的同学的概率为$\frac{k}{n}$,总排名第一的同学在后$n-k$名中的概率为$\frac{n-k}{n-1}$.
+
+因此有:
+\begin{equation}
+    g_k=\frac{k}{n}\cdot \frac{n-k}{n-1}
+\end{equation}
+\subsection{记$v_k$为不录取前$k$名学生后，采用最优策略可能录取到综合素质第二名的学生的概率的
+    最大值。试写出$v_k$满足的递推关系。}
+分情况讨论第$k + 1$学生的情况：
+\begin{enumerate}
+    \item 该学生在前$k + 1$名中排名第一：
+
+          这种情况的概率为$\frac{1}{k + 1}$,此时我们需要比较$f_k$和$v_{k + 1}$的大小,最优的情况取最大值,因此该情况下的贡献为$\frac{1}{k + 1}\max(f_k, v_k)$.
+    \item 该学生在前$k + 1$名中排名第二：
+
+          这种情况的概率为$\frac{1}{k + 1}$,此时我们需要比较$g_k$和$v_{k + 1}$的大小,最优的情况取最大值,因此该情况下的贡献为$\frac{1}{k + 1}\max(g_k, v_k)$.
+
+    \item 该学生在前$k + 1$名中排名第三及以后：
+
+          这种情况的概率为$\frac{k - 1}{k + 1}$,此时我们只能采用之前的最优策略,因此该情况下的贡献为$\frac{k - 1}{k + 1}v_k$.
+\end{enumerate}
+综合以上讨论,最后的递推关系为:
+\begin{equation}
+    v_{k}=\frac{1}{k + 1}\max(f_k, v_{k + 1})+\frac{1}{k + 1}\max(g_k, v_{k + 1})+\frac{k - 1}{k + 1}v_{k + 1}
+\end{equation}
+讨论边际情况,$v_0 = \max(\frac{1}{n}, v_1)$,$v_n = 0$.
+
+\begin{equation}
+    v_k = \begin{dcases}
+        \max(\frac{1}{n}, v_1),                                                                                   & k = 0     \\
+        \frac{1}{k + 1}\max(f_k, v_{k + 1}) + \frac{1}{k + 1}\max(g_k, v_{k + 1}) + \frac{k - 1}{k + 1}v_{k + 1}, & 0 < k < n \\
+        0,                                                                                                        & k = n
+    \end{dcases}
+\end{equation}
+
+\subsection{求$v_k$,并给出相应的最优策略}
+由招聘问题,我们需要设置一个观察期阈值,观察前$k$名学生,在$k$之后发现相对成绩第一名或第二名的学生时,就立马录取，并结束面试.
+
+现在我们来确定这个阈值
+
+我们需要找到$k$,使得超过$k$之后,$f_{k + 1} > v_{k + 1}$,且$g_{k + 1} > v_{k + 1}$,此时,招收满足条件的同学收益最大.
+
+在超过阈值之后，$v_k$的递推公式退化为
+\begin{equation}
+    v_k = \frac{1}{k + 1}(f_{k + 1} + g_{k + 1}) + \frac{k - 1}{k + 1}v_{k + 1}
+\end{equation}
+
+因为$f_{k + 1} + g_{k + 1} = \frac{k + 1}{n}$,代入得、
+\begin{equation}
+    v_k = \frac{1}{n} + \frac{k - 1}{k + 1}v_{k + 1}
+\end{equation}
+
+这个公式当$f_{k + 1} > v_{k + 1}$且$g_{k + 1} > v_{k + 1}$时成立,即$k > \lfloor \frac{n}{2} \rfloor$成立.
+\begin{equation}
+    v_k = \begin{cases}
+        \frac{\lfloor \frac{n}{2} \rfloor (n - \lfloor \frac{n}{2} \rfloor)}{n(n-1)}, & 0 \le k < \lfloor \frac{n}{2} \rfloor \\
+        \frac{k(n-k)}{n(n-1)},                                                        & \lfloor \frac{n}{2} \rfloor \le k < n
+    \end{cases}
+\end{equation}
+\section{第二题}
+\subsection{试求出招聘方对第$r$名接受面试的求职者提出意向并被接受，而该求职者恰为能力最强的求职者的概率}
+第$r$名求职者为能力最强的求职者概率在他在前$r$名中是能力最强的条件概率为$\frac{r}{n}$,接受的概率为$p$,因此总概率为:
+\begin{equation}
+    P_r = \frac{r}{n}\cdot p
+\end{equation}
+\subsection{记$v_r$为从招聘方面试第$r$名求职者起，采用最优策略以录用到能力最强的求职者的概率的最大值。试写出$v_r$满足的递推关系}
+与上一题类似，在面试了$r - 1$名求职者后，分情况讨论第$r$名求职者的情况：
+\begin{enumerate}
+    \item 该求职者为前$r$名中能力最强的：
+
+          这种情况的概率为$\frac{1}{r}$,此时我们需要比较$P_{r}$和$v_{r}$的大小,最优的情况取最大值,因此该情况下的贡献为$\frac{1}{r}\max(\frac{pr}{n} + (1 - p)v_{r + 1}, \quad v_{r + 1})$.
+    \item 该求职者不是前$r$名中能力最强的：
+
+          这种情况的概率为$\frac{r - 1}{r}$,此时我们只能采用之前的最优策略,因此该情况下的贡献为$\frac{r - 1}{r}v_{r + 1}$.
+\end{enumerate}
+
+综合以上讨论,最后的递推关系为:
+\begin{equation}
+    v_r = \frac{r-1}{r} v_{r+1} + \frac{1}{r} \max \left( p\frac{r}{n} + (1-p)v_{r+1}, \quad v_{r+1} \right)
+\end{equation}
+\subsection{求$v_r$的表达式与$\displaystyle{\lim_{n \to \infty}v_1}$，并给出招聘方最优策略的具体描述}
+当提出录用的收益比不提出录用的收益大的时候，我们遇到满足条件的就可以录用。
+\begin{equation}
+    \begin{aligned}
+        p\frac{r}{n} + (1-p)v_{r+1} & \ge v_{r+1}   \\
+        p\frac{r}{n}                & \ge p v_{r+1} \\
+        \frac{r}{n}                 & \ge v_{r+1}   \\
+    \end{aligned}
+\end{equation}
+此时递推式满足：
+\begin{equation}
+    v_r = \frac{r-p}{r} v_{r+1} + \frac{p}{n}
+\end{equation}
+当$n$很大的时候，可以令$x = \frac{r}{n}$，记 $v_r \approx V(x)$,那么原来的递推式可以近似为微分方程：
+\begin{equation}
+    \frac{dV}{dx} = \frac{p(1 - V(x))}{x}
+\end{equation}
+解得：
+\begin{equation}
+    V'(x) - \frac{p}{x}V(x) = -p
+\end{equation}
+
+解得：
+\begin{equation}
+    V(x) = \frac{p}{p-1}x + C x^p
+\end{equation}
+再通过$x = 1$时，$V(1) = 0$，解得$C = \frac{1}{1-p}$.因此有：
+\begin{equation}
+    V(x) = \frac{p}{1-p}(x^p - x)
+\end{equation}
+那么我们要找的观察期个数就是$x \ge V(x)$的值，也就是$x^* = V(x^*)$.
+\begin{equation}
+    x^* = p^{\frac{1}{1-p}}
+\end{equation}
+\begin{equation}
+    \lim_{n \to \infty} v_1 = x^* = p^{\frac{1}{1-p}}
+\end{equation}
+\end{document}
